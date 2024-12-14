@@ -1,25 +1,48 @@
-package all.laba4.etc;
+package all.laba5.etc;
 
-import all.laba4.main;
-import all.laba4.primitives.Point;
-import all.laba4.primitives.second.TCircle;
-import all.laba4.primitives.second.TQuadrangle;
-import all.laba4.primitives.third.Ellipse;
-import all.laba4.primitives.third.Rectangle;
-import all.laba4.primitives.third.Rhomb;
-import all.laba4.primitives.third.Trapezoid;
+import all.laba5.main;
+import all.laba5.primitives.Point;
+import all.laba5.primitives.TFigure;
+import all.laba5.primitives.second.TCircle;
+import all.laba5.primitives.second.TQuadrangle;
+import all.laba5.primitives.third.Ellipse;
+import all.laba5.primitives.third.Rectangle;
+import all.laba5.primitives.third.Rhomb;
+import all.laba5.primitives.third.Trapezoid;
+import all.laba5.panel.Fpanel;
 
 import java.awt.*;
 import java.util.Random;
 
 
 public class FigureFactory {
-    private Random rand = new Random();
-    private Color[] colors = new Color[]{Color.MAGENTA, Color.GREEN, Color.yellow};
+    private final Random rand = new Random();
+    private final Color[] colors = new Color[]{Color.RED, Color.GREEN, Color.BLUE};
 
-    private final int COUNT_OF_FIGURES_IN_GROUP = 10;
+    private final Fpanel panel;
 
+    public FigureFactory(Fpanel panel) {
+        this.panel = panel;
+    }
 
+    public TFigure[] getNewRandomFigures() {
+
+        TFigure[] figures = new TFigure[30];
+
+        for (int i = 0; i < figures.length; i++) {
+            int figureType = rand.nextInt(6);
+            switch (figureType) {
+                case 0 -> figures[i] = createRandomCircle();
+                case 1 -> figures[i] = createRandomEllipse();
+                case 2 -> figures[i] = createRandomRectangle();
+                case 3 -> figures[i] = createRandomRhomb();
+                case 4 -> figures[i] = createRandomQuadrangle();
+                case 5 -> figures[i] = createRandomTrapezoid();
+            }
+        }
+
+        return figures;
+    }
     public TCircle createRandomCircle(){
         Point point = new Point(
                 rand.nextInt(main.FRAME_WIDTH),
@@ -87,46 +110,4 @@ public class FigureFactory {
         return new Trapezoid(center, topWidth, bottomWidth, height, colors[colorIndex]);
     }
 
-
-    public TCircle[] createCircleArray(){
-        TCircle[] circles = new TCircle[COUNT_OF_FIGURES_IN_GROUP];
-        for(int i = 0; i < COUNT_OF_FIGURES_IN_GROUP; i++){
-            circles[i] = createRandomCircle();
-        }
-        return circles;
-    }
-
-    public Rhomb[] createRhombArray() {
-        Rhomb[] rhombs = new Rhomb[COUNT_OF_FIGURES_IN_GROUP];
-        for(int i = 0; i < COUNT_OF_FIGURES_IN_GROUP; i++){
-            rhombs[i] = createRandomRhomb();
-        }
-        return rhombs;
-    }
-    public Ellipse[] createEllipseArray(){
-        Ellipse[] ellipses = new Ellipse[COUNT_OF_FIGURES_IN_GROUP];
-        for(int i = 0; i < COUNT_OF_FIGURES_IN_GROUP; i++){
-            ellipses[i] = createRandomEllipse();
-        }
-        return ellipses;
-    }
-    public Rectangle[] createRectangleArray(){
-        Rectangle[] rectangles = new Rectangle[COUNT_OF_FIGURES_IN_GROUP];
-        for(int i = 0; i < COUNT_OF_FIGURES_IN_GROUP; i++){
-            rectangles[i] = createRandomRectangle();
-        }
-        return rectangles;
-    }
-    public TQuadrangle[] createQuadrangleArray() {
-        TQuadrangle[] quadrangles = new TQuadrangle[COUNT_OF_FIGURES_IN_GROUP];
-        for (int i = 0; i < COUNT_OF_FIGURES_IN_GROUP; i++) {
-            quadrangles[i] = createRandomQuadrangle();
-        }
-        return quadrangles;
-    }
-    public Trapezoid[] createRandomTrapezoidArray() {
-        Trapezoid[] trapezoids = new Trapezoid[COUNT_OF_FIGURES_IN_GROUP];
-        for (int i = 0; i < trapezoids.length; i++) trapezoids[i] = createRandomTrapezoid();
-        return trapezoids;
-    }
 }

@@ -1,8 +1,8 @@
-package all.laba4.primitives.third;
+package all.laba5.primitives.third;
 
-import all.laba4.etc.Log;
-import all.laba4.primitives.Point;
-import all.laba4.primitives.second.TQuadrangle;
+import all.laba5.etc.Log;
+import all.laba5.primitives.Point;
+import all.laba5.primitives.second.TQuadrangle;
 
 import java.awt.*;
 import java.util.Arrays;

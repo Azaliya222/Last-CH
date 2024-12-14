@@ -35,6 +35,7 @@ public abstract class TFigure {
     }
 
     public abstract void show(Graphics g);
+
     public Point getCenter() {
         return center;
     }

@@ -114,7 +114,11 @@ public class Fpanel extends JPanel {
             case "Круг" -> {
                 if (figures[0] != null) {
                     Arrays.stream(figures[0]).forEach(figure -> {
+                        if (figure == null) {
+                            return;
+                        }
                         figure.erase();
+
                         repaint();
                         figure = null;
                         System.gc();
@@ -125,6 +129,9 @@ public class Fpanel extends JPanel {
             case "Элипс" -> {
                 if (figures[1] != null) {
                     Arrays.stream(figures[1]).forEach(figure -> {
+                        if (figure == null) {
+                            return;
+                        }
                         figure.erase();
                         repaint();
                         figure = null;
@@ -136,6 +143,9 @@ public class Fpanel extends JPanel {
             case "Четырехугольник" -> {
                 if (figures[2] != null) {
                     Arrays.stream(figures[2]).forEach(figure -> {
+                        if (figure == null) {
+                            return;
+                        }
                         figure.erase();
                         repaint();
                         figure = null;
@@ -147,6 +157,9 @@ public class Fpanel extends JPanel {
             case "Прямоугольник" -> {
                 if (figures[3] != null) {
                     Arrays.stream(figures[3]).forEach(figure -> {
+                        if (figure == null) {
+                            return;
+                        }
                         figure.erase();
                         repaint();
                         figure = null;
@@ -158,6 +171,9 @@ public class Fpanel extends JPanel {
             case "Ромб" -> {
                 if (figures[4] != null) {
                     Arrays.stream(figures[4]).forEach(figure -> {
+                        if (figure == null) {
+                            return;
+                        }
                         figure.erase();
                         repaint();
                         figure = null;
@@ -169,6 +185,9 @@ public class Fpanel extends JPanel {
             case "Трапеция" -> {
                 if (figures[5] != null) {
                     Arrays.stream(figures[5]).forEach(figure -> {
+                        if (figure == null) {
+                            return;
+                        }
                         figure.erase();
                         repaint();
                         figure = null;
@@ -286,6 +305,9 @@ public class Fpanel extends JPanel {
                 if (figures[0] != null) {
                     Arrays.stream(figures[0]).forEach(figure -> {
                         TCircle circle = (TCircle) figure;
+                        if (figure == null) {
+                            return;
+                        }
                         circle.changeRadius(rand.nextInt(100));
                     });
                 }
@@ -294,6 +316,9 @@ public class Fpanel extends JPanel {
                 if (figures[1] != null) {
                     Arrays.stream(figures[1]).forEach(figure -> {
                         Ellipse ellipse = (Ellipse) figure;
+                        if (figure == null) {
+                            return;
+                        }
                         ellipse.change(rand.nextInt(100), rand.nextInt(100));
                     });
                 }
@@ -302,6 +327,9 @@ public class Fpanel extends JPanel {
                 if (figures[2] != null) {
                     Arrays.stream(figures[2]).forEach(figure -> {
                         TQuadrangle quadrangle = (TQuadrangle) figure;
+                        if (figure == null) {
+                            return;
+                        }
                         quadrangle.changeSize(
                                 rand.nextInt(100) + 40,  // Изменение по X
                                 rand.nextInt(100) + 40
@@ -313,6 +341,9 @@ public class Fpanel extends JPanel {
                 if (figures[3] != null) {
                     Arrays.stream(figures[3]).forEach(figure -> {
                         Rectangle rectangle = (Rectangle) figure;
+                        if (figure == null) {
+                            return;
+                        }
                         rectangle.change(
                                 rand.nextInt(100) + 40,
                                 rand.nextInt(100) + 40
@@ -324,6 +355,9 @@ public class Fpanel extends JPanel {
                 if (figures[4] != null) {
                     Arrays.stream(figures[4]).forEach(figure -> {
                         Rhomb rhomb= (Rhomb) figure;
+                        if (figure == null) {
+                            return;
+                        }
                         rhomb.change(
                                 rand.nextInt(100) + 40,
                                 rand.nextInt(100) + 40
@@ -335,6 +369,9 @@ public class Fpanel extends JPanel {
                 if (figures[5] != null) {
                     Arrays.stream(figures[5]).forEach(figure -> {
                         Trapezoid trapezoid = (Trapezoid) figure;
+                        if (figure == null) {
+                            return;
+                        }
                         trapezoid.change(
                                 rand.nextInt(100) + 40,
                                 rand.nextInt(100) + 40

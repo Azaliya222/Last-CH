@@ -1,6 +1,6 @@
-package all.laba4.primitives;
+package all.laba5.primitives;
 
-import all.laba4.etc.Log;
+import all.laba5.etc.Log;
 
 import java.awt.*;
 import java.util.Arrays;
@@ -42,9 +42,9 @@ public abstract class TFigure {
         return points;
     }
 
-    public void setCenter(Point[] points) {
-        this.points= points;
-    }
+    //public void setCenter(Point[] points) {
+        //this.points= points;
+    //}
     public void setPoints(Point[] points) {
         this.points= points;
     }
@@ -75,5 +75,8 @@ public abstract class TFigure {
                 ", visible=" + visible +
                 ", graphics=" + graphics +
                 '}';
+    }
+
+    public void setCenter(java.awt.Point[] points) {
     }
 }

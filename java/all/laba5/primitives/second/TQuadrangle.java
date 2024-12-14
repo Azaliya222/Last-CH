@@ -1,8 +1,8 @@
-package all.laba4.primitives.second;
+package all.laba5.primitives.second;
 
-import all.laba4.etc.Log;
-import all.laba4.primitives.Point;
-import all.laba4.primitives.TFigure;
+import all.laba5.etc.Log;
+import all.laba5.primitives.Point;
+import all.laba5.primitives.TFigure;
 
 import java.awt.*;
 import java.util.Arrays;
