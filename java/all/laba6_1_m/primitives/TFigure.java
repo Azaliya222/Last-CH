@@ -1,9 +1,6 @@
-package all.laba5.primitives;
-
-import all.laba5.etc.Log;
+package all.laba6_1_m.primitives;
 
 import java.awt.*;
-import java.util.Arrays;
 
 public abstract class TFigure {
     private Point center;
@@ -12,11 +9,12 @@ public abstract class TFigure {
 
     public TFigure(Point center) {
         this.center = center;
-        System.out.println("Figure created");
+
+        System.out.println("figure at " + center + " created");
     }
 
     public Graphics getGraphics() {
-        return this.graphics;
+        return graphics;
     }
 
     public void setGraphics(Graphics graphics) {
@@ -26,19 +24,21 @@ public abstract class TFigure {
     public final void moveTo(int diffX, int diffY) {
         this.center.setX(this.center.getX() + diffX);
         this.center.setY(this.center.getY() + diffY);
-        this.show(this.graphics);
-        System.out.println("Figure moved to " + String.valueOf(this));
+        show(graphics);
+
+        System.out.println("figure at " + center + " moved to " + this.center);
     }
 
-    public void erase() {
+    public void erase(){
         this.visible = false;
-        System.out.println("Figure erased");
+
+        System.out.println("figure at " + center + " erased");
     }
 
-    public abstract void show(Graphics var1);
+    public abstract void show(Graphics g);
 
     public Point getCenter() {
-        return this.center;
+        return center;
     }
 
     public void setCenter(Point center) {
@@ -46,17 +46,20 @@ public abstract class TFigure {
     }
 
     public boolean isVisible() {
-        return this.visible;
+        return visible;
     }
 
     public void setVisible(boolean visible) {
         this.visible = visible;
     }
 
+    @Override
     protected void finalize() throws Throwable {
         this.center = null;
         System.gc();
-        System.out.println("Figure deleted");
+
+        System.out.println("figure at " + center + " deleted");
     }
+
 }
 

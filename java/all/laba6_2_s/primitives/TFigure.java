@@ -1,9 +1,6 @@
-package all.laba5.primitives;
-
-import all.laba5.etc.Log;
+package all.laba6_2_s.primitives;
 
 import java.awt.*;
-import java.util.Arrays;
 
 public abstract class TFigure {
     private Point center;

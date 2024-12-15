@@ -1,4 +1,4 @@
-package all.laba5.primitives;
+package all.laba6_2_s.primitives;
 
 public class Point {
     private int x;

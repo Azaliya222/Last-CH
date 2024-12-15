@@ -1,9 +1,10 @@
-package all.laba5.panel;
+package all.laba6_2_s.panel;
+
+import all.laba6_2_s.etc.JButton;
 
 import javax.swing.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import all.laba5.etc.JButton;
 
 
 public class Cpanel extends JPanel {
@@ -77,9 +78,7 @@ public class Cpanel extends JPanel {
 
     private JButton buildDeleteButton() {
         JButton deleteButton = new JButton("Удалить", this);
-        deleteButton.addActionListener(e -> {
-            figuresPanel.deleteFigures(figuresTypes.getSelectedItem().toString());
-        });
+        deleteButton.addActionListener((e) -> this.figuresPanel.deleteFigures(this.figuresTypes.getSelectedItem().toString()));
         return deleteButton;
     }
 

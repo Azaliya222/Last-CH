@@ -1,7 +1,7 @@
-package all.laba5.primitives.third;
+package all.laba6_2_s.primitives.third;
 
-import all.laba5.primitives.Point;
-import all.laba5.primitives.second.TSquare;
+import all.laba6_2_s.primitives.Point;
+import all.laba6_2_s.primitives.second.TSquare;
 
 import java.awt.*;
 

@@ -1,11 +1,9 @@
-package all.laba5.primitives.second;
+package all.laba6_1_m.primitives.second;
 
-import all.laba5.etc.Log;
-import all.laba5.primitives.Point;
-import all.laba5.primitives.TFigure;
+import all.laba6_1_m.primitives.Point;
+import all.laba6_1_m.primitives.TFigure;
 
 import java.awt.*;
-import java.util.Arrays;
 
 public class TCircle extends TFigure {
     private int radius;

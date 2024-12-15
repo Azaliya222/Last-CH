@@ -1,19 +1,16 @@
-package all.laba5.panel;
+package all.laba6_2_s.panel;
 
-import all.laba5.etc.FigureFactory;
-import all.laba5.main;
-import all.laba5.primitives.TFigure;
-import all.laba5.primitives.second.TCircle;
-import all.laba5.primitives.second.TSquare;
-import all.laba5.primitives.third.Ellipse;
-import all.laba5.primitives.third.Rectangle;
-import all.laba5.primitives.third.Rhomb;
-import all.laba5.primitives.Point;
+import all.laba6_2_s.etc.FigureFactory;
+import all.laba6_2_s.primitives.Point;
+import all.laba6_2_s.primitives.TFigure;
+import all.laba6_2_s.primitives.second.TCircle;
+import all.laba6_2_s.primitives.second.TSquare;
+import all.laba6_2_s.primitives.third.Ellipse;
+import all.laba6_2_s.primitives.third.Rectangle;
+import all.laba6_2_s.primitives.third.Rhomb;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Arrays;
-import java.util.Objects;
 import java.util.Random;
 
 
@@ -114,18 +111,15 @@ public class Fpanel extends JPanel {
         this.repaint();
     }
 
-    public void deleteFigures(String c){
-        int i = 0;
-        while(i < figures.length){
-            if(figures[i] != null) {
-                if (checking(c, figures[i])) {
-                    figures[i].erase();
-                    figures[i] = null;
-                }
+    public void deleteFigures(String c) {
+        for(int i = 0; i < this.figures.length; ++i) {
+            if (this.checking(c, this.figures[i])) {
+                this.figures[i].erase();
+                this.figures[i] = null;
             }
-            i++;
         }
-        repaint();
+
+        this.repaint();
     }
 
     public void moveFigures(String c, int diffX, int diffY) {

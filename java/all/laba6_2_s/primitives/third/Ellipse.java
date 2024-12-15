@@ -1,11 +1,9 @@
-package all.laba5.primitives.third;
+package all.laba6_2_s.primitives.third;
 
-import all.laba5.etc.Log;
-import all.laba5.primitives.Point;
-import all.laba5.primitives.second.TCircle;
+import all.laba6_2_s.primitives.Point;
+import all.laba6_2_s.primitives.second.TCircle;
 
 import java.awt.*;
-import java.util.Arrays;
 
 public class Ellipse extends TCircle {
     private int smallSemiAxis;

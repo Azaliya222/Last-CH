@@ -1,14 +1,13 @@
-package all.laba5.etc;
+package all.laba6_1_m.etc;
 
-import all.laba5.main;
-import all.laba5.primitives.Point;
-import all.laba5.primitives.TFigure;
-import all.laba5.primitives.second.TCircle;
-import all.laba5.primitives.second.TSquare;
-import all.laba5.primitives.third.Ellipse;
-import all.laba5.primitives.third.Rectangle;
-import all.laba5.primitives.third.Rhomb;
-import all.laba5.panel.Fpanel;
+import all.laba6_1_m.panel.Fpanel;
+import all.laba6_1_m.primitives.Point;
+import all.laba6_1_m.primitives.TFigure;
+import all.laba6_1_m.primitives.second.TCircle;
+import all.laba6_1_m.primitives.second.TSquare;
+import all.laba6_1_m.primitives.third.Ellipse;
+import all.laba6_1_m.primitives.third.Rectangle;
+import all.laba6_1_m.primitives.third.Rhomb;
 
 import java.awt.*;
 import java.util.Random;
@@ -24,30 +23,26 @@ public class FigureFactory {
         this.panel = panel;
     }
 
-    public TFigure[] getNewRandomFigures() {
-        TFigure[] figures = new TFigure[30];
-
-        for(int i = 0; i < figures.length; ++i) {
-            int figureType = this.rand.nextInt(8);
-            switch (figureType) {
-                case 0:
-                    figures[i] = this.createRandomCircle();
-                    break;
-                case 1:
-                    figures[i] = this.createRandomEllipse();
-                    break;
-                case 2:
-                    figures[i] = this.createRandomSquare();
-                    break;
-                case 3:
-                    figures[i] = this.createRandomRectangle();
-                    break;
-                case 4:
-                    figures[i] = this.createRandomRhombus();
+    public void addRandomFigure(ArrayList figures) {
+        int num = rand.nextInt(6);
+        if(figures == null) return;
+        switch (num) {
+            case 0 -> {
+                figures.add(createRandomCircle());
+            }
+            case 1 -> {
+                figures.add(createRandomEllipse());
+            }
+            case 2 -> {
+                figures.add(createRandomRectangle());
+            }
+            case 3 -> {
+                figures.add(createRandomSquare());
+            }
+            case 4 -> {
+                figures.add(createRandomRhombus());
             }
         }
-
-        return figures;
     }
 
     public TCircle createRandomCircle() {

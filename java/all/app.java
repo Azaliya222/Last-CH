@@ -4,7 +4,8 @@ package all;
 //import all.laba2.main;
 //import all.laba3.main;
 //import all.laba4.main;
-import all.laba5.main;
+//import all.laba5.main;
+import all.laba6_1_m.main;
 
 
 public class app {
